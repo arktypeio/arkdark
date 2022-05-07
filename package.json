@@ -1,33 +1,36 @@
 {
-  "name": "redo-rainbow-theme",
-  "displayName": "Redo Rainbow Theme",
-  "description": "vscode theme inspired by a galaxy far far away...",
-  "version": "0.0.1",
-  "private": true,
-  "publisher": "re-do",
-  "scripts": {
-    "prebuild": "rm -rf themes && mkdir themes",
-    "build": "node ./src/writeTheme.js",
-    "install:local": "node ./installLocal.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:re-do/redo.git"
-  },
-  "engines": {
-    "vscode": "^1.0.0"
-  },
-  "icon": "icon.png",
-  "categories": [
-    "Themes"
-  ],
-  "contributes": {
-    "themes": [
-      {
-        "label": "Redo Rainbow",
-        "uiTheme": "vs-dark",
-        "path": "./themes/AnOldHopeItalic.json"
-      }
-    ]
-  }
+    "name": "redo-rainbow-theme",
+    "displayName": "Redo Rainbow Theme",
+    "description": "Vibrant vscode dark theme 🎨",
+    "version": "0.0.2",
+    "private": true,
+    "publisher": "re-do",
+    "scripts": {
+        "build": "rm -rf themes && mkdir themes && node ./src/writeTheme.js",
+        "installLocal": "node ./installLocal.js",
+        "tryBuild": "npm run build && npm run installLocal"
+    },
+    "devDependencies": {
+        "vsce": "2.7.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:re-do/redo-rainbow-theme.git"
+    },
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "icon": "icon.png",
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Redo Rainbow",
+                "uiTheme": "vs-dark",
+                "path": "./themes/AnOldHopeItalic.json"
+            }
+        ]
+    }
 }

@@ -1,4 +1,3 @@
 module.exports = {
-  AnOldHope: require('./AnOldHope'),
-  AnOldHopeTatooine: require('./AnOldHopeTatooine')
+    redoRainbow: require("./redoRainbow")
 }
