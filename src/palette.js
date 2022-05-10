@@ -1,8 +1,8 @@
 const theme = {
-    stringsAndVars: "#264bcf",
-    keywordsAndTokens: "#00ad43",
+    stringsAndVars: "#1f75fe",
+    keywordsAndTokens: "#0bda51",
     propertiesAndMisc: "#ff7518",
-    componentsAndDeclarations: "#c80815",
+    componentsAndDeclarations: "#f51423",
     functionsAndTypes: "#ffc40c"
 }
 
@@ -11,5 +11,7 @@ module.exports = {
     green: theme.keywordsAndTokens,
     orange: theme.propertiesAndMisc,
     red: theme.componentsAndDeclarations,
-    yellow: theme.functionsAndTypes
+    yellow: theme.functionsAndTypes,
+    // Added
+    purple: "#bf00ff"
 }

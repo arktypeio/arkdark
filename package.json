@@ -2,13 +2,14 @@
     "name": "redo-rainbow-theme",
     "displayName": "Redo Rainbow Theme",
     "description": "Vibrant vscode dark theme 🎨",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "private": true,
     "publisher": "re-do",
     "scripts": {
-        "build": "rm -rf themes && mkdir themes && node ./src/writeTheme.js",
+        "build": "node ./src/writeTheme.js",
         "installLocal": "node ./installLocal.js",
-        "tryBuild": "npm run build && npm run installLocal"
+        "tryBuild": "npm run build && npm run installLocal",
+        "publish": "npx vsce publish"
     },
     "devDependencies": {
         "vsce": "2.7.0"
@@ -29,7 +30,7 @@
             {
                 "label": "Redo Rainbow",
                 "uiTheme": "vs-dark",
-                "path": "./themes/AnOldHopeItalic.json"
+                "path": "./themes/redoRainbow.json"
             }
         ]
     }

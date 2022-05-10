@@ -10,7 +10,8 @@ module.exports = ({
     red,
     secondary,
     selection,
-    yellow
+    yellow,
+    purple
 }) => ({
     contrastActiveBorder: null,
     contrastBorder: background,
@@ -217,5 +218,9 @@ module.exports = ({
     "gitDecoration.modifiedResourceForeground": yellow,
     "gitDecoration.deletedResourceForeground": red,
     "gitDecoration.untrackedResourceForeground": green,
-    "textPreformat.foreground": yellow
+    "textPreformat.foreground": yellow,
+    "editorBracketHighlight.foreground1": purple,
+    "editorBracketHighlight.foreground2": green,
+    "editorBracketHighlight.foreground3": yellow,
+    "editorBracketHighlight.unexpectedBracket.foreground": red
 })
