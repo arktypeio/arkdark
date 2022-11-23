@@ -215,7 +215,7 @@ module.exports = (palette, useItalics) => {
             name: "Library class/type",
             scope: ["support.type", "support.class"],
             settings: {
-                foreground: types
+                foreground: primitives
             }
         },
         {
