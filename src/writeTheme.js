@@ -1,16 +1,14 @@
 const { writeFileSync, rmSync, mkdirSync } = require("fs")
-const themes = require("./themes")
 const getColors = require("./getColors")
 const getTokenColors = require("./getTokenColors")
-const palette = require("./palette")
+const sharedPalette = require("./sharedPalette")
 
 rmSync("./themes", { recursive: true, force: true })
 mkdirSync("./themes")
 
-const makeGetContent = (theme) => (useItalics) => {
-    const themeMeta = Object.assign(palette, theme)
-    const colors = getColors(themeMeta)
-    const tokenColors = getTokenColors(themeMeta, useItalics)
+const getContent = (palette, useItalics) => {
+    const colors = getColors()
+    const tokenColors = getTokenColors(palette, useItalics)
     const content = {
         colors,
         tokenColors
@@ -18,13 +16,29 @@ const makeGetContent = (theme) => (useItalics) => {
     return JSON.stringify(content, null, 4)
 }
 
-const writeTheme = (themeKey) => {
-    const theme = themes[themeKey]
-    const getContent = makeGetContent(theme)
-    const normal = getContent(false)
-    const italic = getContent(true)
-    writeFileSync(`./themes/${themeKey}.json`, normal)
-    writeFileSync(`./themes/${themeKey}Italic.json`, italic)
+const arkPalette = {
+    stringsAndVars: "#002147",
+    keywordsAndTokens: "#E3AB57",
+    propertiesAndMisc: "#ff7518",
+    componentsAndDeclarations: "#f51423",
+    functionsAndTypes: "#ffc40c"
 }
 
-writeTheme("arkDark")
+const rainbowPalette = {
+    stringsAndVars: sharedPalette.blue,
+    keywordsAndTokens: sharedPalette.green,
+    propertiesAndMisc: sharedPalette.orange,
+    componentsAndDeclarations: sharedPalette.red,
+    functionsAndTypes: sharedPalette.yellow
+}
+
+const writeTheme = (key) => {
+    const palette = key === "rainbow" ? rainbowPalette : arkPalette
+    const normal = getContent(palette, false)
+    const italic = getContent(palette, true)
+    writeFileSync(`./themes/${key}.json`, normal)
+    writeFileSync(`./themes/${key}Italic.json`, italic)
+}
+
+writeTheme("rainbow")
+writeTheme("ark")

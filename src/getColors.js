@@ -1,18 +1,21 @@
-const shadeColor = require("./helpers/shadeColor")
+const shadeColor = require("./shadeColor")
+const sharedPalette = require("./sharedPalette")
 
-module.exports = ({
+const {
     background,
-    blue,
     comment,
     foreground,
+    secondary,
+    selection,
+    blue,
     green,
     orange,
     red,
-    secondary,
-    selection,
     yellow,
     purple
-}) => ({
+} = sharedPalette
+
+module.exports = () => ({
     contrastActiveBorder: null,
     contrastBorder: background,
     focusBorder: background,

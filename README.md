@@ -1,6 +1,6 @@
 # ArkDark
 
-Vibrant dark theme for VS Code from [ArkType](https://arktype.io)
+Dark theme for VS Code from [ArkType](https://arktype.io)
 
 ## Attribution
 
