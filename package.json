@@ -1,7 +1,7 @@
 {
     "name": "arkdark",
     "displayName": "ArkDark",
-    "description": "Vibrant dark theme from ArkType",
+    "description": "Vibrant dark theme for VS Code from ArkType ",
     "version": "0.1.0",
     "private": true,
     "publisher": "arktypeio",
