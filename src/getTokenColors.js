@@ -7,13 +7,8 @@ const {
 } = require("./sharedPalette")
 
 module.exports = (palette, useItalics) => {
-    const {
-        stringsAndVars,
-        keywordsAndTokens,
-        propertiesAndMisc,
-        componentsAndDeclarations,
-        functionsAndTypes
-    } = palette
+    const { variables, keywordsAndTokens, primitives, functions, types } =
+        palette
     return [
         {
             name: "Global settings",
@@ -33,28 +28,28 @@ module.exports = (palette, useItalics) => {
             name: "String",
             scope: "string",
             settings: {
-                foreground: stringsAndVars
+                foreground: primitives
             }
         },
         {
             name: "String Quoted",
             scope: "string.quoted",
             settings: {
-                foreground: stringsAndVars
+                foreground: primitives
             }
         },
         {
             name: "Support Constant Math",
             scope: "support.constant.math",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Number",
             scope: ["constant.numeric", "constant.character.numeric"],
             settings: {
-                foreground: propertiesAndMisc
+                foreground: primitives
             }
         },
         {
@@ -72,21 +67,21 @@ module.exports = (palette, useItalics) => {
             name: "User-defined constant",
             scope: ["constant.character", "constant.other"],
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Constant Character Escape",
             scope: "constant.character.escape",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: primitives
             }
         },
         {
             name: "RegExp String",
             scope: ["string.regexp", "string.regexp keyword.other"],
             settings: {
-                foreground: stringsAndVars
+                foreground: primitives
             }
         },
         {
@@ -100,7 +95,7 @@ module.exports = (palette, useItalics) => {
             name: "Variable",
             scope: "variable",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
@@ -125,35 +120,35 @@ module.exports = (palette, useItalics) => {
                 "meta.class meta.method.declaration meta.var.expr storage.type.js"
             ],
             settings: {
-                foreground: componentsAndDeclarations
+                foreground: keywordsAndTokens
             }
         },
         {
             name: "Class name",
             scope: ["entity.name.class", "meta.class entity.name.type.class"],
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Inherited class",
             scope: "entity.other.inherited-class",
             settings: {
-                foreground: stringsAndVars
+                foreground: variables
             }
         },
         {
             name: "Function name",
             scope: "entity.name.function",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Function Parameters",
             scope: "variable.parameter",
             settings: {
-                foreground: stringsAndVars
+                foreground: variables
             }
         },
         {
@@ -174,7 +169,7 @@ module.exports = (palette, useItalics) => {
                 "meta.tag.html"
             ],
             settings: {
-                foreground: componentsAndDeclarations
+                foreground: keywordsAndTokens
             }
         },
         {
@@ -185,49 +180,49 @@ module.exports = (palette, useItalics) => {
                 "entity.name.tag"
             ],
             settings: {
-                foreground: componentsAndDeclarations
+                foreground: keywordsAndTokens
             }
         },
         {
             name: "Tag attribute",
             scope: "entity.other.attribute-name",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Entity Name Tag Custom",
             scope: "entity.name.tag.custom",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Library (function & constant)",
             scope: ["support.function", "support.constant"],
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Support Constant Property Value meta",
             scope: "support.constant.meta.property-value",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: primitives
             }
         },
         {
             name: "Library class/type",
             scope: ["support.type", "support.class"],
             settings: {
-                foreground: functionsAndTypes
+                foreground: types
             }
         },
         {
             name: "Support Variable DOM",
             scope: "support.variable.dom",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
@@ -278,7 +273,7 @@ module.exports = (palette, useItalics) => {
             name: "Null",
             scope: "constant.language.null",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: primitives
             }
         },
         {
@@ -299,7 +294,7 @@ module.exports = (palette, useItalics) => {
             name: "Boolean",
             scope: "constant.language.boolean",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: primitives
             }
         },
         {
@@ -313,33 +308,33 @@ module.exports = (palette, useItalics) => {
             name: "Variable Parameter Function",
             scope: "variable.parameter.function",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: functions
             }
         },
         {
             name: "Support Type Property Name & entity name tags",
             scope: [
-                "support.type.vendocomponentsAndDeclarations.property-name",
-                "support.constant.vendocomponentsAndDeclarations.property-value",
+                "support.type.vendokeywordsAndTokens.property-name",
+                "support.constant.vendokeywordsAndTokens.property-value",
                 "support.type.property-name",
                 "meta.property-list entity.name.tag"
             ],
             settings: {
-                foreground: stringsAndVars
+                foreground: variables
             }
         },
         {
             name: "Entity Name tag reference in stylesheets",
             scope: "meta.property-list entity.name.tag.reference",
             settings: {
-                foreground: componentsAndDeclarations
+                foreground: keywordsAndTokens
             }
         },
         {
             name: "Constant Other Color RGB Value Punctuation Definition Constant",
             scope: "constant.other.color.rgb-value punctuation.definition.constant",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: primitives
             }
         },
         {
@@ -367,14 +362,14 @@ module.exports = (palette, useItalics) => {
             name: "Entity Other Attribute Name Id",
             scope: "entity.other.attribute-name.id",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Meta Property Name",
             scope: "meta.property-name",
             settings: {
-                foreground: stringsAndVars
+                foreground: variables
             }
         },
         {
@@ -395,7 +390,7 @@ module.exports = (palette, useItalics) => {
             name: "Keyword Control Operator",
             scope: "keyword.control.operator",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: keywordsAndTokens
             }
         },
         {
@@ -414,7 +409,7 @@ module.exports = (palette, useItalics) => {
                 "variable.other.readwrite.instance"
             ],
             settings: {
-                foreground: componentsAndDeclarations
+                foreground: keywordsAndTokens
             }
         },
         {
@@ -424,14 +419,14 @@ module.exports = (palette, useItalics) => {
                 "variable.other.object.property"
             ],
             settings: {
-                foreground: propertiesAndMisc
+                foreground: variables
             }
         },
         {
             name: "Entity Name Function",
             scope: "entity.name.function",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
@@ -449,14 +444,14 @@ module.exports = (palette, useItalics) => {
                 "keyword.other.new"
             ],
             settings: {
-                foreground: propertiesAndMisc
+                foreground: keywordsAndTokens
             }
         },
         {
             name: "Support Function",
             scope: "support.function",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: functions
             }
         },
         {
@@ -487,49 +482,49 @@ module.exports = (palette, useItalics) => {
             name: "Language Variable",
             scope: "variable.language",
             settings: {
-                foreground: componentsAndDeclarations
+                foreground: keywordsAndTokens
             }
         },
         {
             name: "Support Variable Property",
             scope: "support.variable.property",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: variables
             }
         },
         {
             name: "Variable Function",
             scope: "variable.function",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Variable Interpolation",
             scope: "variable.interpolation",
             settings: {
-                foreground: componentsAndDeclarations
+                foreground: keywordsAndTokens
             }
         },
         {
             name: "Meta Function Call",
             scope: "meta.function-call",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Punctuation Section Embedded",
             scope: "punctuation.section.embedded",
             settings: {
-                foreground: componentsAndDeclarations
+                foreground: keywordsAndTokens
             }
         },
         {
             name: "Template Strings",
             scope: "string.template meta.template.expression",
             settings: {
-                foreground: componentsAndDeclarations
+                foreground: keywordsAndTokens
             }
         },
         {
@@ -544,7 +539,7 @@ module.exports = (palette, useItalics) => {
             name: "Bold",
             scope: "bold",
             settings: {
-                foreground: functionsAndTypes,
+                foreground: functions,
                 fontStyle: "bold"
             }
         },
@@ -552,7 +547,7 @@ module.exports = (palette, useItalics) => {
             name: "Quote",
             scope: "quote",
             settings: {
-                foreground: stringsAndVars,
+                foreground: primitives,
                 fontStyle: "italic"
             }
         },
@@ -560,28 +555,7 @@ module.exports = (palette, useItalics) => {
             name: "Raw Code",
             scope: "raw",
             settings: {
-                foreground: stringsAndVars
-            }
-        },
-        {
-            name: "CoffeScript Variable Assignment",
-            scope: "variable.assignment.coffee",
-            settings: {
-                foreground: propertiesAndMisc
-            }
-        },
-        {
-            name: "CoffeScript Parameter Function",
-            scope: "variable.parameter.function.coffee",
-            settings: {
-                foreground: foreground
-            }
-        },
-        {
-            name: "CoffeeScript Assignments",
-            scope: "variable.assignment.coffee",
-            settings: {
-                foreground: propertiesAndMisc
+                foreground: primitives
             }
         },
         {
@@ -595,7 +569,7 @@ module.exports = (palette, useItalics) => {
             name: "C# Classes & Storage types",
             scope: ["entity.name.type.class.cs", "storage.type.cs"],
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
@@ -613,7 +587,7 @@ module.exports = (palette, useItalics) => {
                 "entity.name.tag.custom.css"
             ],
             settings: {
-                foreground: componentsAndDeclarations
+                foreground: keywordsAndTokens
             }
         },
         {
@@ -625,7 +599,7 @@ module.exports = (palette, useItalics) => {
                 "entity.name.tag.wildcard.sass"
             ],
             settings: {
-                foreground: componentsAndDeclarations
+                foreground: keywordsAndTokens
             }
         },
         {
@@ -639,7 +613,7 @@ module.exports = (palette, useItalics) => {
             name: "Attribute Name for CSS",
             scope: "meta.attribute-selector.css entity.other.attribute-name.attribute",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: primitives
             }
         },
         {
@@ -649,14 +623,14 @@ module.exports = (palette, useItalics) => {
                 "source.elixir meta.module.elixir entity.name.class.elixir"
             ],
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Elixir Functions",
             scope: "source.elixir entity.name.function",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
@@ -666,14 +640,14 @@ module.exports = (palette, useItalics) => {
                 "source.elixir constant.other.keywords.elixir"
             ],
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Elixir String Punctuations",
             scope: "source.elixir punctuation.definition.string",
             settings: {
-                foreground: stringsAndVars
+                foreground: primitives
             }
         },
         {
@@ -683,7 +657,7 @@ module.exports = (palette, useItalics) => {
                 "source.elixir variable.other.readwrite.module.elixir punctuation.definition.variable.elixir"
             ],
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
@@ -697,21 +671,21 @@ module.exports = (palette, useItalics) => {
             name: "Go Function Calls",
             scope: "source.go meta.function-call.go",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "ID Attribute Name in HTML",
             scope: "entity.other.attribute-name.id.html",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "HTML Punctuation Definition Tag",
             scope: "punctuation.definition.tag.html",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: primitives
             }
         },
         {
@@ -725,14 +699,14 @@ module.exports = (palette, useItalics) => {
             name: "JavaScript Classes",
             scope: "meta.class entity.name.type.class.js",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "JavaScript Method Declaration e.g. `constructor`",
             scope: "meta.method.declaration storage.type.js",
             settings: {
-                foreground: functionsAndTypes,
+                foreground: functions,
                 fontStyle: "normal"
             }
         },
@@ -764,7 +738,7 @@ module.exports = (palette, useItalics) => {
             name: "Other Variables in Code Documentations",
             scope: ["variable.other.jsdoc", "variable.other.phpdoc"],
             settings: {
-                foreground: stringsAndVars
+                foreground: variables
             }
         },
         {
@@ -781,7 +755,7 @@ module.exports = (palette, useItalics) => {
             name: "JavaScript Variable Parameter Function",
             scope: "variable.parameter.function.js",
             settings: {
-                foreground: stringsAndVars
+                foreground: variables
             }
         },
         {
@@ -814,7 +788,7 @@ module.exports = (palette, useItalics) => {
             name: "JavaScript Entity Name Type",
             scope: ["entity.name.type.js", "entity.name.type.module.js"],
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
@@ -828,35 +802,35 @@ module.exports = (palette, useItalics) => {
             name: "JSON Property Names",
             scope: "support.type.property-name.json",
             settings: {
-                foreground: componentsAndDeclarations
+                foreground: keywordsAndTokens
             }
         },
         {
             name: "JSON Support Constants",
             scope: "support.constant.json",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "JSON Property values (string)",
             scope: "meta.structure.dictionary.value.json string.quoted.double",
             settings: {
-                foreground: stringsAndVars
+                foreground: primitives
             }
         },
         {
             name: "Strings in JSON values",
             scope: "string.quoted.double.json punctuation.definition.string.json",
             settings: {
-                foreground: stringsAndVars
+                foreground: primitives
             }
         },
         {
             name: "Specific JSON Property values like null",
             scope: "meta.structure.dictionary.json meta.structure.dictionary.value constant.language",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: primitives
             }
         },
         {
@@ -870,14 +844,14 @@ module.exports = (palette, useItalics) => {
             name: "Ruby Hashkeys",
             scope: "constant.language.symbol.hashkey.ruby",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: primitives
             }
         },
         {
             name: "LESS Tag names",
             scope: "entity.name.tag.less",
             settings: {
-                foreground: componentsAndDeclarations
+                foreground: keywordsAndTokens
             }
         },
         {
@@ -891,14 +865,14 @@ module.exports = (palette, useItalics) => {
             name: "Attribute Name for LESS",
             scope: "meta.attribute-selector.less entity.other.attribute-name.attribute",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: primitives
             }
         },
         {
             name: "Markdown Headings",
             scope: "markup.heading.markdown",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
@@ -913,7 +887,7 @@ module.exports = (palette, useItalics) => {
             name: "Markdown Bold",
             scope: "markup.bold.markdown",
             settings: {
-                foreground: functionsAndTypes,
+                foreground: functions,
                 fontStyle: "bold"
             }
         },
@@ -921,7 +895,7 @@ module.exports = (palette, useItalics) => {
             name: "Markdown Quote + others",
             scope: "markup.quote.markdown",
             settings: {
-                foreground: stringsAndVars,
+                foreground: primitives,
                 fontStyle: "italic"
             }
         },
@@ -929,7 +903,7 @@ module.exports = (palette, useItalics) => {
             name: "Markdown Raw Code + others",
             scope: "markup.inline.raw.markdown",
             settings: {
-                foreground: stringsAndVars
+                foreground: primitives
             }
         },
         {
@@ -939,7 +913,7 @@ module.exports = (palette, useItalics) => {
                 "markup.underline.link.image.markdown"
             ],
             settings: {
-                foreground: stringsAndVars
+                foreground: primitives
             }
         },
         {
@@ -961,28 +935,28 @@ module.exports = (palette, useItalics) => {
                 "meta.link.inline.markdown punctuation.definition.string"
             ],
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Markdown MetaData Punctuation",
             scope: ["punctuation.definition.metadata.markdown"],
             settings: {
-                foreground: componentsAndDeclarations
+                foreground: keywordsAndTokens
             }
         },
         {
             name: "Markdown List Punctuation",
             scope: ["beginning.punctuation.definition.list.markdown"],
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Support Classes in PHP",
             scope: "support.class.php",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
@@ -996,21 +970,21 @@ module.exports = (palette, useItalics) => {
             name: "PHP Global Variables",
             scope: "variable.other.global.php",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Declaration Punctuation in PHP Global Variables",
             scope: "variable.other.global.php punctuation.definition.variable",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
             name: "Language Constants in Python",
             scope: "constant.language.python",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: primitives
             }
         },
         {
@@ -1020,7 +994,7 @@ module.exports = (palette, useItalics) => {
                 "meta.function-call.arguments.python"
             ],
             settings: {
-                foreground: stringsAndVars
+                foreground: variables
             }
         },
         {
@@ -1034,7 +1008,7 @@ module.exports = (palette, useItalics) => {
             name: "Decorator Functions in Python",
             scope: "entity.name.function.decorator.python",
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
@@ -1044,7 +1018,7 @@ module.exports = (palette, useItalics) => {
                 "source.css.sass meta.at-rule variable"
             ],
             settings: {
-                foreground: functionsAndTypes
+                foreground: functions
             }
         },
         {
@@ -1054,14 +1028,14 @@ module.exports = (palette, useItalics) => {
                 "meta.attribute-selector.sass entity.other.attribute-name.attribute"
             ],
             settings: {
-                foreground: propertiesAndMisc
+                foreground: primitives
             }
         },
         {
             name: "Tag names in SASS",
             scope: ["entity.name.tag.scss", "entity.name.tag.sass"],
             settings: {
-                foreground: componentsAndDeclarations
+                foreground: keywordsAndTokens
             }
         },
         {
@@ -1095,14 +1069,14 @@ module.exports = (palette, useItalics) => {
             name: "TypeScript[React] Entity Name Types",
             scope: ["entity.name.type.ts", "entity.name.type.tsx"],
             settings: {
-                foreground: functionsAndTypes
+                foreground: types
             }
         },
         {
             name: "TypeScript[React] Node Classes",
             scope: ["support.class.node.ts", "support.class.node.tsx"],
             settings: {
-                foreground: functionsAndTypes
+                foreground: types
             }
         },
         {
@@ -1132,7 +1106,7 @@ module.exports = (palette, useItalics) => {
                 "meta.decorator punctuation.decorator.tsx"
             ],
             settings: {
-                foreground: functionsAndTypes
+                foreground: types
             }
         },
         {
@@ -1149,27 +1123,12 @@ module.exports = (palette, useItalics) => {
             name: "YAML Entity Name Tags",
             scope: "entity.name.tag.yaml",
             settings: {
-                foreground: propertiesAndMisc
+                foreground: primitives
             }
         },
         {
             name: "Normalize font style of certain Components",
-            scope: [
-                "meta.property-list.css meta.property-value.css variable.other.less",
-                "meta.property-list.scss variable.scss",
-                "meta.property-list.sass variable.sass",
-                "keyword.operator.logical",
-                "keyword.operator.arithmetic",
-                "keyword.operator.bitwise",
-                "keyword.operator.increment",
-                "keyword.operator.ternary",
-                "keyword.operator.comparison",
-                "keyword.operator.assignment",
-                "keyword.operator.operator",
-                "keyword.operator.or.regexp",
-                "punctuation.definintion.string",
-                "punctuation"
-            ],
+            scope: ["keyword", "punctuation"],
             settings: {
                 fontStyle: "normal"
             }
@@ -1177,48 +1136,48 @@ module.exports = (palette, useItalics) => {
         {
             name: "Italicsify certain tokens",
             scope: [
-                "meta.import.ts meta.block.ts variable.other.readwrite.alias.ts",
-                "meta.import.tsx meta.block.tsx variable.other.readwrite.alias.tsx",
-                "meta.import.js variable.other",
+                // "meta.import.ts meta.block.ts variable.other.readwrite.alias.ts",
+                // "meta.import.tsx meta.block.tsx variable.other.readwrite.alias.tsx",
+                // "meta.import.js variable.other",
+                // "entity.name.function.ts",
+                // "entity.name.function.tsx",
+                // "support.type.primitive",
+                // "entity.name.tag.yaml",
+                // "meta.tag.sgml.doctype.html",
+                // "entity.name.tag.doctype",
+                // "meta.tag.sgml.doctype",
+                // "entity.other.attribute-name",
+                // "entity.name.tag.custom",
+                // "source.js.jsx keyword.control.flow.js",
+                // "support.type.property.css",
+                // "support.function.basic_functions",
+                // "variable.assignment.coffee",
+                // "support.function.basic_functions",
+                // "keyword.operator.expression.typeof",
+                // "keyword.operator.type.annotation",
+                // "assignment.coffee",
+                // "entity.name.type.ts",
+                // "support.constant.math",
+                // "meta.object-literal.key",
+                // "meta.var.expr storage.type",
+                // "parameter",
+                // "string",
+                // "italic",
+                // "quote",
+                // "keyword",
+                // "storage",
+                // "language",
+                // "storage.type.class",
+                // "type.var",
+                // "meta.parameter",
+                // "variable.parameter",
+                // "meta.parameters",
+                // "keyword.control",
+                // "modifier",
+                // "this",
+                // "comment",
                 "entity.name.function.ts",
-                "entity.name.function.tsx",
-                "support.type.primitive",
-                "entity.name.tag.yaml",
-                "meta.tag.sgml.doctype.html",
-                "entity.name.tag.doctype",
-                "meta.tag.sgml.doctype",
-                "entity.other.attribute-name",
-                "entity.name.tag.custom",
-                "source.js.jsx keyword.control.flow.js",
-                "support.type.property.css",
-                "support.function.basic_functions",
-                "variable.assignment.coffee",
-                "support.function.basic_functions",
-                "keyword.operator.expression.typeof",
-                "keyword.operator.type.annotation",
-                "assignment.coffee",
-                "entity.name.type.ts",
-                "support.constant.math",
-                "meta.object-literal.key",
-                "meta.var.expr storage.type",
-                "parameter",
-                "string",
-                "italic",
-                "quote",
-                "keyword",
-                "storage",
-                "language",
-                "type .function",
-                "type.function",
-                "storage.type.class",
-                "type.var",
-                "meta.parameter",
-                "variable.parameter",
-                "meta.parameters",
-                "keyword.control",
-                "modifier",
-                "this",
-                "comment"
+                "entity.name.function.tsx"
             ],
             settings: {
                 fontStyle: useItalics ? "italic" : "normal"

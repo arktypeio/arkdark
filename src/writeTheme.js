@@ -7,7 +7,7 @@ rmSync("./themes", { recursive: true, force: true })
 mkdirSync("./themes")
 
 const getContent = (palette, useItalics) => {
-    const colors = getColors()
+    const colors = getColors(palette)
     const tokenColors = getTokenColors(palette, useItalics)
     const content = {
         colors,
@@ -16,29 +16,30 @@ const getContent = (palette, useItalics) => {
     return JSON.stringify(content, null, 4)
 }
 
-const arkPalette = {
-    stringsAndVars: "#002147",
-    keywordsAndTokens: "#E3AB57",
-    propertiesAndMisc: "#ff7518",
-    componentsAndDeclarations: "#f51423",
-    functionsAndTypes: "#ffc40c"
+const arkDarkPalette = {
+    variables: sharedPalette.blue,
+    keywordsAndTokens: "#e3ab57",
+    primitives: "#ae741e",
+    types: "#47b9ff",
+    functions: sharedPalette.blue
 }
 
-const rainbowPalette = {
-    stringsAndVars: sharedPalette.blue,
+const arkDarkStarkPalette = {
+    variables: sharedPalette.orange,
     keywordsAndTokens: sharedPalette.green,
-    propertiesAndMisc: sharedPalette.orange,
-    componentsAndDeclarations: sharedPalette.red,
-    functionsAndTypes: sharedPalette.yellow
+    primitives: sharedPalette.purple,
+    types: sharedPalette.blue,
+    functions: sharedPalette.yellow
 }
 
 const writeTheme = (key) => {
-    const palette = key === "rainbow" ? rainbowPalette : arkPalette
+    const palette =
+        key === "arkDarkStark" ? arkDarkStarkPalette : arkDarkPalette
     const normal = getContent(palette, false)
-    const italic = getContent(palette, true)
     writeFileSync(`./themes/${key}.json`, normal)
+    const italic = getContent(palette, true)
     writeFileSync(`./themes/${key}Italic.json`, italic)
 }
 
-writeTheme("rainbow")
-writeTheme("ark")
+writeTheme("arkDark")
+writeTheme("arkDarkStark")

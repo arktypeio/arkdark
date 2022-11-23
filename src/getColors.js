@@ -11,11 +11,10 @@ const {
     green,
     orange,
     red,
-    yellow,
-    purple
+    yellow
 } = sharedPalette
 
-module.exports = () => ({
+module.exports = (palette) => ({
     contrastActiveBorder: null,
     contrastBorder: background,
     focusBorder: background,
@@ -222,8 +221,8 @@ module.exports = () => ({
     "gitDecoration.deletedResourceForeground": red,
     "gitDecoration.untrackedResourceForeground": green,
     "textPreformat.foreground": yellow,
-    "editorBracketHighlight.foreground1": purple,
-    "editorBracketHighlight.foreground2": green,
-    "editorBracketHighlight.foreground3": yellow,
+    "editorBracketHighlight.foreground1": palette.keywordsAndTokens,
+    "editorBracketHighlight.foreground2": palette.types,
+    "editorBracketHighlight.foreground3": palette.functions,
     "editorBracketHighlight.unexpectedBracket.foreground": red
 })
