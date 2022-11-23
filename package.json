@@ -9,7 +9,7 @@
         "build": "node ./src/writeTheme.js",
         "installLocal": "node ./installLocal.js",
         "tryBuild": "npm run build && npm run installLocal",
-        "publish": "npx vsce publish"
+        "publishExtension": "npx vsce publish"
     },
     "devDependencies": {
         "vsce": "2.14.0"
