@@ -1,3 +1,3 @@
 module.exports = {
-    redoRainbow: require("./redoRainbow")
+    arkDark: require("./arkDark")
 }

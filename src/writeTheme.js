@@ -11,12 +11,10 @@ const makeGetContent = (theme) => (useItalics) => {
     const themeMeta = Object.assign(palette, theme)
     const colors = getColors(themeMeta)
     const tokenColors = getTokenColors(themeMeta, useItalics)
-
     const content = {
         colors,
         tokenColors
     }
-
     return JSON.stringify(content, null, 4)
 }
 
@@ -29,4 +27,4 @@ const writeTheme = (themeKey) => {
     writeFileSync(`./themes/${themeKey}Italic.json`, italic)
 }
 
-writeTheme("redoRainbow")
+writeTheme("arkDark")

@@ -1,10 +1,10 @@
 {
-    "name": "redo-rainbow-theme",
-    "displayName": "Redo Rainbow Theme",
-    "description": "Vibrant vscode dark theme 🎨",
-    "version": "0.0.3",
+    "name": "arkdark",
+    "displayName": "ArkDark",
+    "description": "Vibrant dark theme from ArkType",
+    "version": "0.1.0",
     "private": true,
-    "publisher": "re-do",
+    "publisher": "arktypeio",
     "scripts": {
         "build": "node ./src/writeTheme.js",
         "installLocal": "node ./installLocal.js",
@@ -12,11 +12,11 @@
         "publish": "npx vsce publish"
     },
     "devDependencies": {
-        "vsce": "2.7.0"
+        "vsce": "2.14.0"
     },
     "repository": {
         "type": "git",
-        "url": "git@github.com:re-do/redo-rainbow-theme.git"
+        "url": "https://github.com/arktypeio/arkdark"
     },
     "engines": {
         "vscode": "^1.0.0"
@@ -28,9 +28,9 @@
     "contributes": {
         "themes": [
             {
-                "label": "Redo Rainbow",
+                "label": "ArkDark",
                 "uiTheme": "vs-dark",
-                "path": "./themes/redoRainbow.json"
+                "path": "./themes/arkDark.json"
             }
         ]
     }
