@@ -148,7 +148,7 @@ module.exports = (palette, useItalics) => {
             name: "Function Parameters",
             scope: "variable.parameter",
             settings: {
-                foreground: variables
+                foreground: foreground
             }
         },
         {
