@@ -17,11 +17,11 @@ const getContent = (palette, useItalics) => {
 }
 
 const arkDarkPalette = {
-    variables: sharedPalette.blue,
-    keywordsAndTokens: "#e3ab57",
-    primitives: "#ae741e",
-    types: "#47b9ff",
-    functions: sharedPalette.blue
+    variables: "#80cff8",
+    keywordsAndTokens: "#eb9f2e",
+    primitives: "#f5cf8f",
+    types: "#009eff",
+    functions: "#80cff8"
 }
 
 const arkDarkStarkPalette = {
@@ -37,8 +37,8 @@ const writeTheme = (key) => {
         key === "arkDarkStark" ? arkDarkStarkPalette : arkDarkPalette
     const normal = getContent(palette, false)
     writeFileSync(`./themes/${key}.json`, normal)
-    const italic = getContent(palette, true)
-    writeFileSync(`./themes/${key}Italic.json`, italic)
+    // const italic = getContent(palette, true)
+    // writeFileSync(`./themes/${key}Italic.json`, italic)
 }
 
 writeTheme("arkDark")
