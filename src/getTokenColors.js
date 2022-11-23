@@ -799,17 +799,20 @@ module.exports = (palette, useItalics) => {
             }
         },
         {
-            name: "JSON Property Names",
-            scope: "support.type.property-name.json",
+            name: "JSON Property Names and JS/TS object literal keys",
+            scope: [
+                "support.type.property-name.json",
+                "meta.object-literal.key"
+            ],
             settings: {
-                foreground: keywordsAndTokens
+                foreground: variables
             }
         },
         {
             name: "JSON Support Constants",
             scope: "support.constant.json",
             settings: {
-                foreground: functions
+                foreground: primitives
             }
         },
         {
