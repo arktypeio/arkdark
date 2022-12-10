@@ -1,4 +1,5 @@
 const shadeColor = require("./shadeColor")
+const { purple } = require("./sharedPalette")
 const sharedPalette = require("./sharedPalette")
 
 const {
@@ -45,11 +46,14 @@ module.exports = (palette) => ({
     "badge.background": background,
     "badge.foreground": foreground,
     "progressBar.background": blue,
+    "gitDecoration.modifiedResourceForeground": shadeColor(blue, 50),
+    "gitDecoration.deletedResourceForeground": shadeColor(red, 50),
+    "gitDecoration.untrackedResourceForeground": shadeColor(purple, 50),
+    "list.errorForeground": shadeColor(red, 50),
+    "list.warningForeground": shadeColor(green, 50),
     "list.activeSelectionBackground": secondary,
     "list.activeSelectionForeground": foreground,
     "list.dropBackground": null,
-    "list.errorForeground": orange,
-    "list.warningForeground": red,
     "list.focusBackground": shadeColor(secondary, 10),
     "list.focusForeground": foreground,
     "list.highlightForeground": foreground,
@@ -217,9 +221,6 @@ module.exports = (palette) => ({
     "walkThrough.embeddedEditorBackground": null,
     "textLink.foreground": blue,
     "textLink.activeForeground": shadeColor(blue, 30),
-    "gitDecoration.modifiedResourceForeground": yellow,
-    "gitDecoration.deletedResourceForeground": red,
-    "gitDecoration.untrackedResourceForeground": green,
     "textPreformat.foreground": yellow,
     "editorBracketHighlight.foreground1": palette.keywordsAndTokens,
     "editorBracketHighlight.foreground2": palette.types,
