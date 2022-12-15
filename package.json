@@ -2,7 +2,7 @@
     "name": "arkdark",
     "displayName": "ArkDark",
     "description": "Dark theme for VS Code from ArkType",
-    "version": "0.9.0",
+    "version": "0.10.0",
     "private": true,
     "publisher": "arktypeio",
     "scripts": {
@@ -33,19 +33,9 @@
                 "path": "./themes/arkDark.json"
             },
             {
-                "label": "ArkDark (italic)",
-                "uiTheme": "vs-dark",
-                "path": "./themes/arkDarkItalic.json"
-            },
-            {
                 "label": "ArkDarkStark",
                 "uiTheme": "vs-dark",
                 "path": "./themes/arkDarkStark.json"
-            },
-            {
-                "label": "ArkDarkStark (italic)",
-                "uiTheme": "vs-dark",
-                "path": "./themes/arkDarkStarkItalic.json"
             }
         ]
     }

@@ -74,7 +74,7 @@ module.exports = (palette, useItalics) => {
             name: "Constant Character Escape",
             scope: "constant.character.escape",
             settings: {
-                foreground: primitives
+                foreground: variables
             }
         },
         {

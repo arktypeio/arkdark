@@ -25,9 +25,9 @@ const arkDarkPalette = {
 }
 
 const arkDarkStarkPalette = {
-    variables: sharedPalette.orange,
+    variables: sharedPalette.purple,
     keywordsAndTokens: sharedPalette.green,
-    primitives: sharedPalette.purple,
+    primitives: sharedPalette.orange,
     types: sharedPalette.blue,
     functions: sharedPalette.yellow
 }
