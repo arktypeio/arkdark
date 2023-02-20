@@ -2,14 +2,13 @@
     "name": "arkdark",
     "displayName": "ArkDark",
     "description": "Dark theme for VS Code from ArkType",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "private": true,
     "publisher": "arktypeio",
     "scripts": {
         "build": "node ./src/writeTheme.js",
-        "installLocal": "node ./installLocal.js",
-        "tryBuild": "npm run build && npm run installLocal",
-        "publishExtension": "npx vsce publish"
+        "install": "pnpm build && node ./installLocal.js",
+        "publish": "npx vsce publish"
     },
     "devDependencies": {
         "vsce": "2.15.0"
