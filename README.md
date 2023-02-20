@@ -17,7 +17,3 @@ We're building an isomorphic type syntax for TS/JS. Check out the core project [
 ### ArkDark
 
 ![example](./arkDark.png)
-
-### ArkDarkStark
-
-![example](./arkDarkStark.png)

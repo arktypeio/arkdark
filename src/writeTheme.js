@@ -1,7 +1,6 @@
 const { writeFileSync, rmSync, mkdirSync } = require("fs")
 const getColors = require("./getColors")
 const getTokenColors = require("./getTokenColors")
-const sharedPalette = require("./sharedPalette")
 
 rmSync("./themes", { recursive: true, force: true })
 mkdirSync("./themes")
@@ -24,17 +23,8 @@ const arkDarkPalette = {
     functions: "#80cff8"
 }
 
-const arkDarkStarkPalette = {
-    variables: sharedPalette.purple,
-    keywordsAndTokens: sharedPalette.green,
-    primitives: sharedPalette.orange,
-    types: sharedPalette.blue,
-    functions: sharedPalette.yellow
-}
-
 const writeTheme = (key) => {
-    const palette =
-        key === "arkDarkStark" ? arkDarkStarkPalette : arkDarkPalette
+    const palette = arkDarkPalette
     const normal = getContent(palette, false)
     writeFileSync(`./themes/${key}.json`, normal)
     // const italic = getContent(palette, true)
@@ -42,4 +32,3 @@ const writeTheme = (key) => {
 }
 
 writeTheme("arkDark")
-writeTheme("arkDarkStark")

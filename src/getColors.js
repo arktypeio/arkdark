@@ -10,8 +10,7 @@ const {
     orange,
     red,
     yellow,
-    purple,
-    lightBlue
+    purple
 } = require("./sharedPalette")
 
 module.exports = (palette) => ({
@@ -78,7 +77,7 @@ module.exports = (palette) => ({
     "editorGroupHeader.noTabsBackground": null,
     "editorGroupHeader.tabsBackground": background,
     "editorGroupHeader.tabsBorder": background,
-    "editorInlayHint.foreground": `${lightBlue}80`,
+    "editorInlayHint.foreground": blue,
     "tab.activeBackground": shadeColor(background, 5),
     "tab.activeForeground": foreground,
     "tab.border": background,
