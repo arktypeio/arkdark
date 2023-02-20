@@ -77,7 +77,7 @@ module.exports = (palette) => ({
     "editorGroupHeader.noTabsBackground": null,
     "editorGroupHeader.tabsBackground": background,
     "editorGroupHeader.tabsBorder": background,
-    "editorInlayHint.foreground": "#00ff6a",
+    "editorInlayHint.foreground": "#2faf6460",
     "tab.activeBackground": shadeColor(background, 5),
     "tab.activeForeground": foreground,
     "tab.border": background,
