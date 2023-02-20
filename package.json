@@ -7,7 +7,7 @@
     "publisher": "arktypeio",
     "scripts": {
         "build": "node ./src/writeTheme.js",
-        "install": "pnpm build && node ./installLocal.js",
+        "try": "pnpm build && node ./installLocal.js",
         "vspublish": "pnpm build && npx vsce publish"
     },
     "devDependencies": {
