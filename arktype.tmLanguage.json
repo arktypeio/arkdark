@@ -1,0 +1,27 @@
+{
+    "name": "ArkType",
+    "scopeName": "source.arktype",
+    "patterns": [
+        {
+            "include": "#source.arktype"
+        }
+    ],
+    "repository": {
+        "string.arktype": {
+            "patterns": [
+                {
+                    "include": "#string"
+                }
+            ]
+        },
+        "source.arktype": {
+            "begin": "(type|scope)\\s*\\((?=([^\"'`]*([\"'`])[^\"'`]*\\2)*[^\"'`]*)",
+            "end": "(?<=([^\"'`]*([\"'`])[^\"'`]*\\2)*[^\"'`]*)\\)",
+            "patterns": [
+                {
+                    "include": "#string.arktype"
+                }
+            ]
+        }
+    }
+}

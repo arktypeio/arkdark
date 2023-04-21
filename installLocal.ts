@@ -1,5 +1,7 @@
 import { execSync } from "child_process"
-import { name, version } from "./package.json"
+import { readFileSync } from "fs"
+
+const { name, version } = JSON.parse(readFileSync("package.json").toString())
 
 const vsix = `${name}-${version}.vsix`
 

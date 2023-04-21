@@ -8,13 +8,13 @@
     "type": "module",
     "scripts": {
         "build": "ts-node --esm ./src/writeTheme.ts",
-        "try": "pnpm build && node ./installLocal.js",
+        "try": "pnpm build && ts-node --esm ./installLocal.ts",
         "vspublish": "pnpm build && npx vsce publish"
     },
     "devDependencies": {
-        "vsce": "2.15.0",
         "@types/node": "18.15.13",
-        "ts-node": "10.9.1"
+        "ts-node": "10.9.1",
+        "vsce": "2.15.0"
     },
     "repository": {
         "type": "git",
@@ -33,6 +33,22 @@
                 "label": "ArkDark",
                 "uiTheme": "vs-dark",
                 "path": "./themes/arkDark.json"
+            }
+        ],
+        "grammars": [
+            {
+                "injectTo": [
+                    "source.ts",
+                    "source.js"
+                ],
+                "scopeName": "source.arktype",
+                "path": "./syntaxes/arktype.tmLanguage.json",
+                "embeddedLanguages": {
+                    "string.arktype": "source.ts"
+                },
+                "tokenTypes": {
+                    "string.arktype": "other"
+                }
             }
         ]
     }
