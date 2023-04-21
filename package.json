@@ -2,7 +2,7 @@
     "name": "arkdark",
     "displayName": "ArkDark",
     "description": "Dark theme for VS Code from ArkType",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "private": true,
     "publisher": "arktypeio",
     "type": "module",
