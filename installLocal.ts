@@ -1,5 +1,5 @@
-const { execSync } = require("child_process")
-const { name, version } = require("./package.json")
+import { execSync } from "child_process"
+import { name, version } from "./package.json"
 
 const vsix = `${name}-${version}.vsix`
 

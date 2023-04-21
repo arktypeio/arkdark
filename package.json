@@ -5,13 +5,16 @@
     "version": "1.0.4",
     "private": true,
     "publisher": "arktypeio",
+    "type": "module",
     "scripts": {
-        "build": "node ./src/writeTheme.js",
+        "build": "ts-node --esm ./src/writeTheme.ts",
         "try": "pnpm build && node ./installLocal.js",
         "vspublish": "pnpm build && npx vsce publish"
     },
     "devDependencies": {
-        "vsce": "2.15.0"
+        "vsce": "2.15.0",
+        "@types/node": "18.15.13",
+        "ts-node": "10.9.1"
     },
     "repository": {
         "type": "git",

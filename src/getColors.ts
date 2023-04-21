@@ -1,4 +1,6 @@
-const shadeColor = require("./shadeColor")
+import { shadeColor } from "./shadeColor.js"
+import { Palette, pallete } from "./sharedPalette.js"
+
 const {
     background,
     comment,
@@ -11,9 +13,9 @@ const {
     red,
     yellow,
     purple
-} = require("./sharedPalette")
+} = pallete
 
-module.exports = (palette) => ({
+export const getColors = (palette: Palette) => ({
     contrastActiveBorder: null,
     contrastBorder: background,
     focusBorder: background,

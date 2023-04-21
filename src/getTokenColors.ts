@@ -1,12 +1,8 @@
-const {
-    orange,
-    background,
-    foreground,
-    comment,
-    red
-} = require("./sharedPalette")
+import { Palette, pallete } from "./sharedPalette.js"
 
-module.exports = (palette, useItalics) => {
+const { background, foreground, comment, red, orange } = pallete
+
+export const getTokenColors = (palette: Palette, useItalics: boolean) => {
     const { variables, keywordsAndTokens, primitives, functions, types } =
         palette
     return [

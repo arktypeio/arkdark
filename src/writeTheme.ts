@@ -1,11 +1,11 @@
-const { writeFileSync, rmSync, mkdirSync } = require("fs")
-const getColors = require("./getColors")
-const getTokenColors = require("./getTokenColors")
+import { writeFileSync, rmSync, mkdirSync } from "fs"
+import { getColors } from "./getColors.js"
+import { getTokenColors } from "./getTokenColors.js"
 
 rmSync("./themes", { recursive: true, force: true })
 mkdirSync("./themes")
 
-const getContent = (palette, useItalics) => {
+const getContent = (palette: Record<string, string>, useItalics: boolean) => {
     const colors = getColors(palette)
     const tokenColors = getTokenColors(palette, useItalics)
     const content = {
@@ -23,12 +23,10 @@ const arkDarkPalette = {
     functions: "#80cff8"
 }
 
-const writeTheme = (key) => {
+const writeTheme = (key: string) => {
     const palette = arkDarkPalette
     const normal = getContent(palette, false)
     writeFileSync(`./themes/${key}.json`, normal)
-    // const italic = getContent(palette, true)
-    // writeFileSync(`./themes/${key}Italic.json`, italic)
 }
 
 writeTheme("arkDark")

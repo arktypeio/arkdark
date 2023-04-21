@@ -1,4 +1,4 @@
-module.exports = (col, amt) => {
+export const shadeColor = (col: string, amt: number) => {
     var usePound = false
 
     if (col[0] == "#") {
