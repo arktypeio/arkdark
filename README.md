@@ -4,16 +4,20 @@
 </div>
 <div align="center">
 
-Dark theme for VS Code from [ArkType](https://arktype.io)
+[ArkType](https://arktype.io) syntax highlighting and theme⛵ 
 
 </div>
 
+We're building a 1:1 validator for TypeScript! Check out our core project [on GitHub](https://github.com/arktypeio/arktype)!
 
+## Syntax Highlighting
 
-## Examples
+This extension provides syntax highlighting for strings that are part of an ArkType definition:
 
-We're building an isomorphic type syntax for TS/JS. Check out the core project [on GitHub](https://github.com/arktypeio/arktype)!
+![syntax highlighting](./Highlighting.png)
 
-### ArkDark
+## ArkDark Theme
 
-![example](./arkDark.png)
+It also includes an editor theme based on ArkType and optimized for type syntax:
+
+![theme](./Theme.png)
