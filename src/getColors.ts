@@ -223,8 +223,8 @@ export const getColors = (palette: Palette) => ({
     "textLink.foreground": blue,
     "textLink.activeForeground": shadeColor(blue, 30),
     "textPreformat.foreground": yellow,
-    "editorBracketHighlight.foreground1": palette.keywordsAndTokens,
-    "editorBracketHighlight.foreground2": palette.types,
-    "editorBracketHighlight.foreground3": palette.functions,
-    "editorBracketHighlight.unexpectedBracket.foreground": red
+    "editorBracketHighlight.foreground1": palette.types,
+    "editorBracketHighlight.foreground2": palette.functions,
+    "editorBracketHighlight.unexpectedBracket.foreground":
+        palette.keywordsAndTokens
 })

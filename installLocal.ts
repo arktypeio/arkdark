@@ -5,10 +5,6 @@ const { name, version } = JSON.parse(readFileSync("package.json").toString())
 
 const vsix = `${name}-${version}.vsix`
 
-const commands = [
-    "npm run build",
-    "npx vsce package",
-    `code --install-extension ${vsix}`
-]
+const commands = ["npx vsce package", `code --install-extension ${vsix}`]
 
 commands.map((command) => execSync(command, { stdio: "inherit" }))

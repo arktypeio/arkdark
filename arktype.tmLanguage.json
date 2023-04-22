@@ -1,27 +1,57 @@
 {
-    "name": "ArkType",
-    "scopeName": "source.arktype",
+    "scopeName": "arktype.injection.ts",
+    "injectionSelector": "L:source.ts",
     "patterns": [
         {
-            "include": "#source.arktype"
+            "include": "#definition"
         }
     ],
     "repository": {
-        "string.arktype": {
-            "patterns": [
-                {
-                    "include": "#string"
-                }
-            ]
-        },
-        "source.arktype": {
+        "definition": {
+            "name": "meta.embedded.arktype.definition",
             "begin": "(type|scope)\\s*\\((?=([^\"'`]*([\"'`])[^\"'`]*\\2)*[^\"'`]*)",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function.ts"
+                }
+            },
             "end": "(?<=([^\"'`]*([\"'`])[^\"'`]*\\2)*[^\"'`]*)\\)",
             "patterns": [
                 {
-                    "include": "#string.arktype"
+                    "include": "#expression"
                 }
             ]
+        },
+        "expression": {
+            "contentName": "meta.embedded.arktype.expression",
+            "begin": "([\"'`])",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.type.ts"
+                }
+            },
+            "end": "(?<!\\\\)(\\1)",
+            "endCaptures": {
+                "1": {
+                    "name": "entity.name.type.ts"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#operator"
+                },
+                {
+                    "include": "source.ts#type"
+                }
+            ]
+        },
+        "operator": {
+            "match": "(<|>|=|%)",
+            "captures": {
+                "0": {
+                    "name": "keyword.operator.ts"
+                }
+            }
         }
     }
 }

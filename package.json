@@ -1,8 +1,8 @@
 {
     "name": "arkdark",
     "displayName": "ArkDark",
-    "description": "Dark theme for VS Code from ArkType",
-    "version": "1.0.5",
+    "description": "ArkType syntax highlighting and theme⛵",
+    "version": "2.0.0",
     "private": true,
     "publisher": "arktypeio",
     "type": "module",
@@ -14,7 +14,9 @@
     "devDependencies": {
         "@types/node": "18.15.13",
         "ts-node": "10.9.1",
-        "vsce": "2.15.0"
+        "vsce": "2.15.0",
+        "typescript": "5.1.0-beta",
+        "arktype": "latest"
     },
     "repository": {
         "type": "git",
@@ -25,7 +27,8 @@
     },
     "icon": "icon.png",
     "categories": [
-        "Themes"
+        "Themes",
+        "Programming Languages"
     ],
     "contributes": {
         "themes": [
@@ -39,16 +42,12 @@
             {
                 "injectTo": [
                     "source.ts",
-                    "source.js"
+                    "source.ts.tsx",
+                    "source.js",
+                    "source.js.jsx"
                 ],
-                "scopeName": "source.arktype",
-                "path": "./syntaxes/arktype.tmLanguage.json",
-                "embeddedLanguages": {
-                    "string.arktype": "source.ts"
-                },
-                "tokenTypes": {
-                    "string.arktype": "other"
-                }
+                "scopeName": "arktype.injection.ts",
+                "path": "arktype.tmLanguage.json"
             }
         ]
     }
