@@ -27,4 +27,22 @@ scope({
     obj.type({})
     // syntax should still be correctly highlighted
     const foo = {}
+
+    const outer = (...args: any[]) => obj
+
+    outer("ark", () => {
+        const arkType = type({
+            number: "number",
+            negNumber: "number",
+            maxNumber: "number",
+            string: "string",
+            longString: "string",
+            boolean: "boolean",
+            deeplyNested: {
+                foo: "string",
+                num: "number",
+                bool: "boolean"
+            }
+        })
+    }).type()
 }
