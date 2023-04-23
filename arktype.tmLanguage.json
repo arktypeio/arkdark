@@ -9,7 +9,7 @@
     "repository": {
         "definition": {
             "name": "meta.embedded.arktype.definition",
-            "begin": "(type|scope)\\s*\\((?=([^\"'`]*([\"'`])[^\"'`]*\\2)*[^\"'`]*)",
+            "begin": "(.*\\.?(type|scope))\\s*\\(",
             "beginCaptures": {
                 "1": {
                     "name": "entity.name.function.ts"
@@ -27,13 +27,13 @@
             "begin": "([\"'`])",
             "beginCaptures": {
                 "1": {
-                    "name": "entity.name.type.ts"
+                    "name": "keyword.operator.ts"
                 }
             },
             "end": "(?<!\\\\)(\\1)",
             "endCaptures": {
                 "1": {
-                    "name": "entity.name.type.ts"
+                    "name": "keyword.operator.ts"
                 }
             },
             "patterns": [
