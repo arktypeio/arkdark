@@ -1,6 +1,6 @@
 {
     "scopeName": "arktype.injection.ts",
-    "injectionSelector": "L:source.ts",
+    "injectionSelector": "L:source.ts - comment",
     "patterns": [
         {
             "include": "#definition"
